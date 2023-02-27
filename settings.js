@@ -1,0 +1,1 @@
+The script is not free or public. Send me a DM for serious purchases only.

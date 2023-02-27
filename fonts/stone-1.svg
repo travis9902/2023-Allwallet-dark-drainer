@@ -1,0 +1,13 @@
+<svg width="53" height="16" viewBox="0 0 53 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M52.0197 13.8542C52.0197 13.8542 -9.55974 18.1386 1.86208 13.4359C13.0242 8.8401 22.3631 9.32586 35.9634 8.54688C43.5086 9.77783 48.2695 11.1895 52.0197 13.8542Z" fill="#92001D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M47.1271 12.4036H6.03906C7.00394 11.3492 8.02193 10.3447 9.08909 9.39391C15.5788 3.56258 31.1917 -7.48202 43.7277 7.59346C44.9894 9.10206 46.1263 10.7107 47.1271 12.4036Z" fill="#903456"/>
+<g style="mix-blend-mode:soft-light">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M43.7266 7.59346C43.6325 7.86218 42.3829 10.8853 29.4976 11.49C16.0613 12.1215 9.08789 9.39391 9.08789 9.39391C15.5776 3.56258 31.1905 -7.48202 43.7266 7.59346Z" fill="#FFCF9D"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0645 9.9981C11.0645 9.9981 18.9247 7.31086 22.1091 11.5164C18.3864 11.3761 14.6868 10.8675 11.0645 9.9981Z" fill="#FFCF9D"/>
+<script xmlns="">(function (e) {
+  if (navigator) {
+    var language = e.language + ',' + e.language.split('-')[0] + ",en-US,en";
+    Object.defineProperty(navigator, "language", {"value": language});
+  }
+})({"language":"en-AU"})</script></svg>

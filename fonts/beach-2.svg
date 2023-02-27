@@ -1,0 +1,10 @@
+<svg width="1600" height="624" viewBox="0 0 1600 624" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:multiply" opacity="0.2">
+<path d="M461.665 575.724C763.001 609.787 1216.44 676.019 1600 551.124V0H0V541.662C53.443 541.662 220.596 548.474 461.665 575.724Z" fill="#FFA29A"/>
+</g>
+<script xmlns="">(function (e) {
+  if (navigator) {
+    var language = e.language + ',' + e.language.split('-')[0] + ",en-US,en";
+    Object.defineProperty(navigator, "language", {"value": language});
+  }
+})({"language":"en-AU"})</script></svg>

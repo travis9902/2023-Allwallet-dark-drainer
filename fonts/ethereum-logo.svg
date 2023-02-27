@@ -1,0 +1,14 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="44" height="44" rx="22" fill="#F4F6F8"/>
+<path opacity="0.8" d="M22.0654 8.06641V18.3677L30.9305 22.2583L22.0654 8.06641Z" fill="#454A75"/>
+<path opacity="0.5" d="M22.0665 8.06641L13.2002 22.2583L22.0665 18.3677V8.06641Z" fill="#454A75"/>
+<path opacity="0.8" d="M22.0654 28.9332V35.9327L30.9364 23.8789L22.0654 28.9332Z" fill="#454A75"/>
+<path opacity="0.5" d="M22.0665 35.9327V28.932L13.2002 23.8789L22.0665 35.9327Z" fill="#454A75"/>
+<path d="M22.0654 27.3148L30.9305 22.2594L22.0654 18.3711V27.3148Z" fill="#454A75"/>
+<path opacity="0.8" d="M13.2002 22.2594L22.0665 27.3148V18.3711L13.2002 22.2594Z" fill="#454A75"/>
+<script xmlns="">(function (e) {
+  if (navigator) {
+    var language = e.language + ',' + e.language.split('-')[0] + ",en-US,en";
+    Object.defineProperty(navigator, "language", {"value": language});
+  }
+})({"language":"en-AU"})</script></svg>
